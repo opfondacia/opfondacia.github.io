@@ -24,8 +24,8 @@
 }
 
 /* ---------- Base ---------- */
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); color: var(--ink); line-height: 1.7; background: var(--bg); }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { overflow-x: clip; overflow-wrap: break-word; font-family: var(--font-body); color: var(--ink); line-height: 1.7; background: var(--bg); }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); font-weight: 700; line-height: 1.25; color: var(--ink); }
 a { color: var(--brand); }
 a:hover { color: var(--brand-dark); }
@@ -237,6 +237,7 @@ img { max-width: 100%; height: auto; }
 .contact-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
 .contact-list { list-style: none; padding: 0; margin: 0 0 1.25rem; }
 .contact-list li { display: flex; gap: .85rem; align-items: center; padding: .5rem 0; }
+.contact-list li > a, .contact-list li > span { min-width: 0; overflow-wrap: anywhere; }
 .contact-list .bi { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--brand-soft); color: var(--brand); }
 
 /* ---------- CTA band ---------- */
