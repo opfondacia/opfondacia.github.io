@@ -171,6 +171,8 @@ img { max-width: 100%; height: auto; }
 .next-event .btn { grid-column: 1 / -1; }
 
 /* ---------- Features ---------- */
+.about-photo { max-width: 40rem; margin: 0 auto 2rem; }
+.about-photo img { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
 .feature { text-align: center; padding: 1.75rem 1.25rem; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); height: 100%; }
 .feature h3 { font-size: 1.15rem; margin: 1rem 0 .5rem; }
 .feature p { color: var(--muted); margin: 0; }

@@ -10,7 +10,7 @@ a11y:
 site:
   name: Dimitar P. Kudoglu Foundation
   brand: Kudoglu Foundation
-  description: The Dimitar P. Kudoglu Foundation is a non-governmental organization in Plovdiv, Central District, supporting people in need through projects, events and volunteering.
+  description: The Dimitar P. Kudoglu Foundation is a non-governmental organization in Plovdiv, Central District, supporting people in need through projects, events and volunteering. Winner of the 2023 “Plovdiv” Award for donors and benefactors in the field of art and culture.
 
 nav:
   home: Home
@@ -33,6 +33,7 @@ quote:
   author: Dimitar P. Kudoglu
 
 about:
+  photo_alt: The 2023 “Plovdiv” Award and its certificate, presented to the Bratanov family for restoring the memorial bust of Dimitar Kudoglu
   title: Who we are
   cards:
     - icon: bullseye

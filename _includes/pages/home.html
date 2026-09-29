@@ -75,6 +75,10 @@
       <p>{{ t.site.description }}</p>
     </div>
 
+    <figure class="about-photo">
+      <img src="{{ '/assets/images/who-are-we.jpg' | relative_url }}" alt="{{ t.about.photo_alt }}" width="2048" height="1800" loading="lazy">
+    </figure>
+
     <div class="row g-4">
       {% for card in t.about.cards %}
         <div class="col-12 col-md-4">
