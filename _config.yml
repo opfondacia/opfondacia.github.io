@@ -1,6 +1,6 @@
 # Language-neutral settings. All visible text lives in _data/i18n/<lang>.yml.
 title: Фондация „Димитър П. Кудоглу“
-description: Фондация „Димитър П. Кудоглу“ – неправителствена организация в град Пловдив, район Централен.
+description: Фондация „Димитър П. Кудоглу“ – неправителствена организация.
 lang: bg               # default language, served at /. Other languages are served under /<lang>/ (see README).
 
 # User/organization site (repo is named <owner>.github.io), so baseurl stays empty.

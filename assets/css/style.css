@@ -363,7 +363,7 @@ a.sponsor { transition: transform .2s ease, box-shadow .2s ease; }
   .tournament-actions { display: flex; flex-wrap: wrap; max-width: none; }
   .sponsors { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
   .sponsor { height: 120px; }
-  .sponsor img { height: 70px; }
+  .sponsor img { height: 80px; }
 }
 
 /* ---------- History page ---------- */
