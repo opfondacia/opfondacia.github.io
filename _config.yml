@@ -1,0 +1,81 @@
+# Language-neutral settings. All visible text lives in _data/i18n/<lang>.yml.
+title: Фондация „Димитър П. Кудоглу“
+description: Фондация „Димитър П. Кудоглу“ – неправителствена организация в град Пловдив, район Централен.
+lang: bg               # default language, served at /. Other languages are served under /<lang>/ (see README).
+
+# User/organization site (repo is named <owner>.github.io), so baseurl stays empty.
+url: "https://opfondacia.github.io"
+baseurl: ""
+
+# Home page hero photo. Leave empty to use the plain red background.
+hero:
+  image: ""            # e.g. /assets/images/hero.jpg
+
+contact:
+  email: kudoglu.foundation@gmail.com          # TODO: replace with the foundation's real email
+  phone: "+359 896 828 935"        # TODO: replace with the foundation's real phone
+  map: "България, гр.Пловдив, район Централен, ул. Гладстон №4"   # address or "lat,lng"; shows a map on the Contacts page when set
+
+# Footer social links. Entries with an empty url are hidden.
+# `icon` is a Bootstrap Icons name (https://icons.getbootstrap.com), e.g. facebook, instagram, youtube.
+social:
+  - name: Facebook
+    icon: facebook
+    url: ""
+  - name: Instagram
+    icon: instagram
+    url: ""
+  - name: YouTube
+    icon: youtube
+    url: ""
+
+plugins:
+  - jekyll-sitemap
+
+markdown: kramdown
+
+# One collection per language, because GitHub Pages has no i18n plugin.
+# Translations of the same event share the same `ref` in their front matter.
+collections:
+  events:                       # Bulgarian
+    output: true
+    permalink: /events/:title/
+  events_en:                    # English
+    output: true
+    permalink: /en/events/:title/
+
+# Events are hidden for now. To enable: set show_events to true, uncomment `events` in
+# _data/navigation.yml and remove `published: false` from the event files and events/index.html pages.
+show_events: false
+
+# Publish events with a future date too (upcoming events).
+future: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: pages
+    values:
+      lang: bg              # regular pages are Bulgarian unless their front matter says `lang: en`
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: event
+      lang: bg
+  - scope:
+      path: ""
+      type: events_en
+    values:
+      layout: event
+      lang: en
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

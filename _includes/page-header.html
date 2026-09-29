@@ -1,0 +1,43 @@
+{%- comment -%}
+  Usage: {% include page-header.html title=t.events.title %}
+         {% include page-header.html title=t.events.title url=events_url crumb=page.title level=2 %}
+  `url` is the full (language-prefixed) path of the section, needed only with `crumb`.
+  `level` defaults to 1; pass 2 when the page already has its own h1 further down
+  (e.g. an event's own title), so the document only has a single h1.
+{%- endcomment -%}
+{%- assign level = include.level | default: 1 -%}
+<section class="page-header">
+  <div class="container">
+    {% if level == 2 %}
+      <h2 class="page-header-title">{{ include.title }}</h2>
+    {% else %}
+      <h1 class="page-header-title">{{ include.title }}</h1>
+    {% endif %}
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ prefix | append: '/' | relative_url }}">{{ t.nav.home }}</a></li>
+        {% if include.crumb %}
+          <li class="breadcrumb-item"><a href="{{ include.url | relative_url }}">{{ include.title }}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ include.crumb }}</li>
+        {% else %}
+          <li class="breadcrumb-item active" aria-current="page">{{ include.title }}</li>
+        {% endif %}
+      </ol>
+    </nav>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": {{ t.nav.home | jsonify }}, "item": {{ prefix | append: "/" | absolute_url | jsonify }}}
+    {% if include.crumb %}
+    ,{"@type": "ListItem", "position": 2, "name": {{ include.title | jsonify }}, "item": {{ include.url | absolute_url | jsonify }}}
+    ,{"@type": "ListItem", "position": 3, "name": {{ include.crumb | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}
+    {% else %}
+    ,{"@type": "ListItem", "position": 2, "name": {{ include.title | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}
+    {% endif %}
+  ]
+}
+</script>

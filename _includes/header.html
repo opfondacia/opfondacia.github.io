@@ -1,0 +1,32 @@
+<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="{{ prefix | append: '/' | relative_url }}">{{ t.site.brand }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="{{ t.nav.toggle }}">
+        <i class="bi bi-list fs-2" aria-hidden="true"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          {% for item in site.data.navigation %}
+            {% assign full = prefix | append: item.url %}
+            {% assign active = false %}
+            {% if item.url == '/' %}
+              {% if page.url == full %}{% assign active = true %}{% endif %}
+            {% elsif page.url contains full %}
+              {% assign active = true %}
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link{% if active %} active{% endif %}"{% if active %} aria-current="page"{% endif %}
+                 href="{{ full | relative_url }}">{{ t.nav[item.key] }}</a>
+            </li>
+          {% endfor %}
+          <li class="nav-item ms-lg-2">
+            <a class="lang-switch" href="{{ alt_url | relative_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}"
+               title="{{ t.switch_title }}"><i class="bi bi-translate" aria-hidden="true"></i> {{ t.switch_to }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

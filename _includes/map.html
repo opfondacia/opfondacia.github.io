@@ -1,0 +1,15 @@
+{%- comment -%}
+  Usage: {% include map.html query=page.map title=page.title %}
+  `query` is an address or "lat,lng". Renders nothing when it is empty.
+{%- endcomment -%}
+{%- assign q = include.query | strip -%}
+{%- if q != "" -%}
+<div class="map-embed">
+  <iframe src="https://maps.google.com/maps?q={{ q | url_encode }}&amp;z=15&amp;hl={{ lang }}&amp;output=embed"
+          title="{{ t.map.title }}: {{ include.title | default: q | escape }}" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</div>
+<a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query={{ q | url_encode }}&amp;hl={{ lang }}" target="_blank" rel="noopener">
+  <i class="bi bi-cursor" aria-hidden="true"></i> {{ t.events.directions }} <span class="visually-hidden">{{ t.a11y.new_tab }}</span>
+</a>
+{%- endif -%}

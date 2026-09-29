@@ -1,0 +1,19 @@
+{%- comment -%} Usage: {% include event-card.html event=event %} {%- endcomment -%}
+<div class="col">
+  <a href="{{ include.event.url | relative_url }}" class="event-card">
+    <div class="event-card-media">
+      {% if include.event.image %}
+        <img src="{{ include.event.image | relative_url }}" loading="lazy"
+             alt="{{ include.event.image_alt | default: include.event.title }}">
+      {% endif %}
+      {% include date-badge.html date=include.event.date %}
+    </div>
+    <div class="event-card-body">
+      <h3>{{ include.event.title }} <span class="visually-hidden">— {% include date-long.html date=include.event.date %}</span></h3>
+      {% if include.event.subtitle %}<p class="subtitle">{{ include.event.subtitle }}</p>{% endif %}
+      {% if include.event.location %}<p class="meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> {{ include.event.location }}</p>{% endif %}
+      <p class="summary">{{ include.event.summary | default: include.event.content | strip_html | truncatewords: 22 }}</p>
+      <span class="read-more">{{ t.events.read_more }} <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+    </div>
+  </a>
+</div>

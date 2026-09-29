@@ -1,0 +1,23 @@
+{%- comment -%}
+  Sets `upcoming_events` (soonest first) and `past_events` (latest first) for the caller,
+  using the events of the current language. "Upcoming" means dated today or later,
+  evaluated when the site is built. Requires i18n.html to have been included first.
+{%- endcomment -%}
+{%- if lang == "en" -%}
+  {%- assign language_events = site.events_en -%}
+{%- else -%}
+  {%- assign language_events = site.events -%}
+{%- endif -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign upcoming_events = "" | split: "" -%}
+{%- assign past_events = "" | split: "" -%}
+{%- assign sorted_events = language_events | sort: "date" -%}
+{%- for e in sorted_events -%}
+  {%- assign d = e.date | date: "%Y-%m-%d" -%}
+  {%- if d >= today -%}
+    {%- assign upcoming_events = upcoming_events | push: e -%}
+  {%- else -%}
+    {%- assign past_events = past_events | push: e -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign past_events = past_events | reverse -%}

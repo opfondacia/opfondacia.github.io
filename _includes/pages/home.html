@@ -1,0 +1,125 @@
+{%- include i18n.html -%}
+{%- include events-split.html -%}
+{%- assign events_url = prefix | append: "/events/" -%}
+{%- assign contacts_url = prefix | append: "/contacts/" -%}
+
+<section class="hero"{% if site.hero.image != "" and site.hero.image %} style="--hero-image: url('{{ site.hero.image | relative_url }}'); --hero-tint: linear-gradient(rgba(112, 16, 18, .8), rgba(112, 16, 18, .8))"{% endif %}>
+  <div class="hero-doors" aria-hidden="true">
+    <div class="door door-left"><img src="{{ '/assets/images/kolona-left.webp' | relative_url }}" alt=""></div>
+    <div class="door door-right"><img src="{{ '/assets/images/kolona-right.webp' | relative_url }}" alt=""></div>
+    <div class="hero-doors-logo"><img src="{{ '/assets/images/kudoglu-logo.png' | relative_url }}" alt=""></div>
+  </div>
+  <noscript><style>.hero-doors { display: none; }</style></noscript>
+
+  <div class="container">
+    <p class="eyebrow">{{ t.hero.eyebrow }}</p>
+    <h1>{{ t.hero.title }}</h1>
+    <p class="lead">{{ t.hero.text }}</p>
+    <div class="hero-actions">
+      {% if site.show_events %}<a href="{{ events_url | relative_url }}" class="btn btn-brand btn-lg">{{ t.hero.cta_events }}</a>{% endif %}
+      <a href="{{ contacts_url | relative_url }}" class="btn btn-outline-light btn-lg">{{ t.hero.cta_involved }}</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Start the doors animation once their images are decoded (or after 2s at most),
+  // then remove the overlay when it has finished.
+  (function () {
+    var doors = document.querySelector('.hero-doors');
+    if (!doors) return;
+    var imgs = Array.prototype.slice.call(doors.querySelectorAll('img'));
+    var decoded = Promise.all(imgs.map(function (img) {
+      return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
+    }));
+    var timeout = new Promise(function (resolve) { setTimeout(resolve, 2000); });
+    Promise.race([decoded, timeout]).then(function () { doors.classList.add('play'); });
+    doors.addEventListener('animationend', function (e) {
+      if (e.target === doors) doors.remove();
+    });
+  })();
+</script>
+
+{% if site.show_events and upcoming_events.size > 0 %}
+  {% assign next = upcoming_events.first %}
+  <section class="next-event">
+    <div class="container">
+      <div class="next-event-inner">
+        {% include date-badge.html date=next.date %}
+        <div class="next-event-text">
+          <span class="label">{{ t.events.next }}</span>
+          <strong>{{ next.title }} <span class="visually-hidden">— {% include date-long.html date=next.date %}</span></strong>
+          {% if next.location %}<span class="where"><i class="bi bi-geo-alt" aria-hidden="true"></i> {{ next.location }}</span>{% endif %}
+        </div>
+        <a href="{{ next.url | relative_url }}" class="btn btn-light">{{ t.events.details }}</a>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<section class="section section-soft">
+  <div class="container">
+    <figure class="quote">
+      <i class="bi bi-quote quote-mark" aria-hidden="true"></i>
+      <blockquote>
+        <p>{{ t.quote.text }}</p>
+      </blockquote>
+      <figcaption>{{ t.quote.author }}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>{{ t.about.title }}</h2>
+      <p>{{ t.site.description }}</p>
+    </div>
+
+    <div class="row g-4">
+      {% for card in t.about.cards %}
+        <div class="col-12 col-md-4">
+          <div class="feature">
+            <span class="feature-icon"><i class="bi bi-{{ card.icon }}" aria-hidden="true"></i></span>
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if site.show_events %}
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      {% if upcoming_events.size > 0 %}
+        <h2>{{ t.events.upcoming }}</h2>
+        {% assign home_events = upcoming_events | slice: 0, 3 %}
+      {% else %}
+        <h2>{{ t.events.recent }}</h2>
+        {% assign home_events = past_events | slice: 0, 3 %}
+      {% endif %}
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for event in home_events %}
+        {% include event-card.html event=event %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="{{ events_url | relative_url }}" class="btn btn-outline-brand">{{ t.events.view_all }}</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="cta-band">
+  <div class="container">
+    <h2>{{ t.cta.title }}</h2>
+    <p>{{ t.cta.text }}</p>
+    <a href="{{ contacts_url | relative_url }}" class="btn btn-light btn-lg">{{ t.cta.button }}</a>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{%- comment -%}
+  Logo grid. Usage: {% include partner-grid.html list=sponsor_list %}
+  `list` is an array of entries from _data/partners.yml. A partner without `url` is shown without a link.
+{%- endcomment -%}
+<ul class="sponsors">
+  {% for s in include.list %}
+    <li>
+      {% if s.url %}
+        <a class="sponsor" href="{{ s.url }}" target="_blank" rel="noopener sponsored" title="{{ s.name }}">
+          <img src="{{ s.logo | relative_url }}" alt="{{ s.name }}" loading="lazy">
+          <span class="visually-hidden">{{ t.a11y.new_tab }}</span>
+        </a>
+      {% else %}
+        <span class="sponsor"><img src="{{ s.logo | relative_url }}" alt="{{ s.name }}" loading="lazy"></span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

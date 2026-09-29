@@ -1,0 +1,20 @@
+{%- include i18n.html -%}
+{%- assign p = t.partners_page -%}
+{% include page-header.html title=p.title %}
+
+<section class="container section">
+  <div class="section-head">
+    <p>{{ p.text }}</p>
+  </div>
+  {% if site.data.partners.size > 0 %}
+    {% include partner-grid.html list=site.data.partners %}
+  {% endif %}
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>{{ p.cta_title }}</h2>
+    <p>{{ p.cta_text }}</p>
+    <a href="{{ prefix | append: '/contacts/' | relative_url }}" class="btn btn-light btn-lg">{{ t.cta.button }}</a>
+  </div>
+</section>

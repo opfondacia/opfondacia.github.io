@@ -1,0 +1,19 @@
+{%- comment -%}
+  Usage: {% include media-card.html item=item %}
+  `item` is an entry of media_page.items in _data/i18n/<lang>.yml (source, title, subtitle, image, url).
+{%- endcomment -%}
+<div class="col">
+  <a href="{{ include.item.url }}" class="event-card media-card" target="_blank" rel="noopener noreferrer">
+    <div class="event-card-media">
+      {% if include.item.image %}
+        <img src="{{ include.item.image | relative_url }}" loading="lazy" alt="{{ include.item.title }}">
+      {% endif %}
+      {% if include.item.source %}<span class="pill">{{ include.item.source }}</span>{% endif %}
+    </div>
+    <div class="event-card-body">
+      <h3>{{ include.item.title }}</h3>
+      {% if include.item.subtitle %}<p class="summary">{{ include.item.subtitle }}</p>{% endif %}
+      <span class="read-more">{{ t.media_page.read }} <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> <span class="visually-hidden">{{ t.a11y.new_tab }}</span></span>
+    </div>
+  </a>
+</div>

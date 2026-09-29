@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Снимка">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ebe3d3"/><stop offset="1" stop-color="#ddd2bd"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <path d="M0 800V560l250-170 220 150 230-230 500 320v170z" fill="#b9ab90"/>
+  <circle cx="900" cy="230" r="70" fill="#c9bda4"/>
+</svg>

@@ -1,0 +1,24 @@
+{%- comment -%}
+  Emits NGO/Organization JSON-LD for the whole site. Included once, in <head> of default.html.
+  Requires i18n.html and lang-alt.html to have been included first (uses `t`, `prefix`).
+{%- endcomment -%}
+{%- assign social_urls = "" | split: "" -%}
+{%- for s in site.social -%}{%- if s.url != "" -%}{%- assign social_urls = social_urls | push: s.url -%}{%- endif -%}{%- endfor -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": {{ t.site.name | jsonify }},
+  "url": {{ prefix | append: "/" | absolute_url | jsonify }},
+  "logo": {{ "/assets/images/favicon.png" | absolute_url | jsonify }},
+  "description": {{ t.site.description | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Plovdiv",
+    "addressCountry": "BG"
+  }{% if social_urls.size > 0 %},
+  "sameAs": {{ social_urls | jsonify }}{% endif %}{% if site.contact.email %},
+  "email": {{ site.contact.email | jsonify }}{% endif %}{% if site.contact.phone %},
+  "telephone": {{ site.contact.phone | jsonify }}{% endif %}
+}
+</script>

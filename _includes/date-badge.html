@@ -1,0 +1,5 @@
+{%- assign m = include.date | date: "%-m" | minus: 1 -%}
+<div class="date-badge" aria-hidden="true">
+  <span class="day">{{ include.date | date: "%-d" }}</span>
+  <span class="month">{{ t.months_short[m] }}</span>
+</div>

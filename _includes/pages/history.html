@@ -1,0 +1,43 @@
+{%- include i18n.html -%}
+{%- assign h = t.history_page -%}
+{% include page-header.html title=h.title %}
+
+{%- comment -%}
+  Each moment is a photo with a caption (figcaption) next to the text.
+  Phones: one photo per row, the text below it. From xl up the photo sits on the left and
+  right of the screen in turn.
+{%- endcomment -%}
+
+{% if h.moments.size > 0 %}
+<section class="container section" id="history">
+  {% if h.text %}
+    <div class="section-head">
+      <p>{{ h.text }}</p>
+    </div>
+  {% endif %}
+  <h2 class="visually-hidden">{{ h.moments_heading }}</h2>
+  <div class="history-list">
+    {% for moment in h.moments %}
+      <article class="history-item">
+        <figure class="history-figure">
+          <img src="{{ moment.photo | relative_url }}" alt="{{ moment.caption | escape }}" width="1200" height="800" loading="lazy">
+          <figcaption>{{ moment.caption }}</figcaption>
+        </figure>
+        <div class="history-text">
+          {% if moment.year %}<span class="history-year">{{ moment.year }}</span>{% endif %}
+          <h3>{{ moment.title }}</h3>
+          <p>{{ moment.text }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="cta-band">
+  <div class="container">
+    <h2>{{ t.cta.title }}</h2>
+    <p>{{ t.cta.text }}</p>
+    <a href="{{ prefix | append: '/contacts/' | relative_url }}" class="btn btn-light btn-lg">{{ t.cta.button }}</a>
+  </div>
+</section>

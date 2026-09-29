@@ -1,0 +1,42 @@
+# All partners of the foundation, in the order they are shown on the Partners page. An event can pick some of
+# them by `id` in its front matter (they are then listed as the event's sponsors):
+#   sponsors: [printable-heads, plovdiv-municipality]
+# The logo files live in assets/images/sponsors/ (any path can be given in `logo`).
+# The logos are the property of their owners. Only keep organizations that actually agreed to be listed as partners.
+- id: printable-heads
+  name: Printable Heads
+  # TODO: stand-in built from the favicon of printableheads.com; replace with the official logo.
+  logo: /assets/images/sponsors/printable-heads.svg
+  url: https://printableheads.com
+- id: plovdiv-municipality
+  name: Община Пловдив
+  logo: /assets/images/sponsors/plovdiv-municipality.png
+  url: https://www.plovdiv.bg
+- id: old-plovdiv
+  name: Старинен Пловдив
+  logo: /assets/images/sponsors/old-plovdiv.png
+  url: https://oldplovdiv.bg
+- id: bulgarian-red-cross
+  name: Български червен кръст
+  logo: /assets/images/sponsors/bulgarian-red-cross.png
+  url: https://www.redcross.bg
+- id: bmchk
+  name: БМЧК
+  logo: /assets/images/sponsors/bmchk.svg
+  url: https://youth.redcross.bg
+- id: mu-plovdiv
+  name: Медицински университет – Пловдив
+  logo: /assets/images/sponsors/mu-plovdiv.svg
+  url: https://mu-plovdiv.bg
+- id: bulgarian-history
+  name: Българска история
+  logo: /assets/images/sponsors/bulgarian-history.png
+  url: https://bulgarianhistory.org
+- id: helikon
+  name: Хеликон
+  logo: /assets/images/sponsors/helikon.png
+  url: https://www.helikon.bg
+- id: nllb
+  name: Национално читалище на слепите „Луи Брайл 1928“
+  logo: /assets/images/sponsors/nllb.jpg
+  url: https://nllb.bg

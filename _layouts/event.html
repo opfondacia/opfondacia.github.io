@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign events_url = prefix | append: "/events/" -%}
+{% include schema-event.html %}
+{% include page-header.html title=t.events.title url=events_url crumb=page.title level=2 %}
+
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign event_day = page.date | date: "%Y-%m-%d" %}
+
+<article class="container section">
+  <header class="event-head">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="lead">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  <div class="event-layout">
+    {% if page.image %}
+      <div class="event-cover">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+      </div>
+    {% endif %}
+
+    <aside class="event-details">
+      <h2>{{ t.events.details_title }}</h2>
+      <ul>
+        <li><i class="bi bi-calendar-event" aria-hidden="true"></i><span>{% include date-long.html date=page.date %}</span></li>
+        {% if page.time %}<li><i class="bi bi-clock" aria-hidden="true"></i><span>{{ page.time }}</span></li>{% endif %}
+        {% if page.location %}<li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>{{ page.location }}</span></li>{% endif %}
+      </ul>
+
+      {% include map.html query=page.map title=page.title %}
+
+      {% if event_day >= today %}
+        {% assign cta_href = page.register_url | default: "" %}
+        {% if cta_href == "" %}
+          {% capture cta_href %}mailto:{{ site.contact.email }}?subject={{ t.events.join_subject | append: page.title | url_encode }}{% endcapture %}
+        {% endif %}
+        <a href="{{ cta_href }}" class="btn btn-brand w-100 mt-3">{{ page.cta_label | default: t.events.join }}</a>
+      {% else %}
+        <p class="event-past"><i class="bi bi-check-circle" aria-hidden="true"></i> {{ t.events.past_notice }}</p>
+      {% endif %}
+    </aside>
+
+    <div class="event-body">
+      {{ content }}
+
+      {% if page.gallery %}
+        <h2 class="h4 mt-5 mb-3">{{ t.events.gallery }}</h2>
+        <div class="row g-2 g-md-3">
+          {% for photo in page.gallery %}
+            <div class="col-6 col-md-4">
+              <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | default: page.title }}" class="gallery-img" loading="lazy">
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</article>

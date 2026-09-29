@@ -1,0 +1,20 @@
+{%- include i18n.html -%}
+{%- assign m = t.media_page -%}
+{% include page-header.html title=m.title %}
+
+<section class="container section">
+  <div class="section-head">
+    <p>{{ m.text }}</p>
+  </div>
+  {% assign items = m.items | where_exp: "i", "i.url != ''" %}
+  {% if items.size > 0 %}
+    <h2 class="visually-hidden">{{ m.items_heading }}</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for item in items %}
+        {% include media-card.html item=item %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center text-muted">{{ m.none }}</p>
+  {% endif %}
+</section>

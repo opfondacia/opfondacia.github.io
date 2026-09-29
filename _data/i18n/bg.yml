@@ -1,0 +1,149 @@
+lang_code: bg
+locale: bg_BG
+switch_to: EN                    # label of the link that switches to the other language
+switch_title: English
+
+a11y:
+  skip_to_content: Към основното съдържание
+  new_tab: (отваря се в нов прозорец)
+
+site:
+  name: Фондация „Димитър П. Кудоглу“
+  brand: Фондация Кудоглу
+  description: Фондация „Димитър П. Кудоглу“ – неправителствена организация в град Пловдив, район Централен, която подпомага хората в нужда чрез проекти, събития и доброволчество.
+
+nav:
+  home: Начало
+  history: История
+  events: Събития
+  partners: Партньори
+  media: В медиите
+  contacts: Контакти
+  toggle: Отвори менюто
+
+hero:
+  eyebrow: Пловдив · район Централен
+  title: Фондация „Димитър П. Кудоглу“
+  text: Добрите и полезни дела започват с човечност. Обединяваме хора, за да помагаме на нуждаещите се.
+  cta_events: Нашите събития
+  cta_involved: Включи се
+
+quote:
+  text: „Богатство, спечелено с честен труд, трябва да служи на човек да върши добри и полезни дела. Намирал съм смисъл в живота, радост и щастие само тогава, когато съм можел да направя нещо добро, да бъда полезен на народа си, на бедните, на страдащите.“
+  author: Димитър П. Кудоглу
+
+about:
+  title: Кои сме ние
+  cards:
+    - icon: bullseye
+      title: Нашата мисия
+      text: Да служим на хората чрез добри и полезни дела – в подкрепа на бедните и страдащите.
+    - icon: people
+      title: Какво правим
+      text: Организираме проекти и събития в полза на общността в Пловдив и региона.
+    - icon: heart
+      title: Включи се
+      text: Стани доброволец, партньор или дарител и помогни ни да направим повече.
+
+events:
+  title: Събития
+  subtitle: Изберете събитие, за да видите подробностите.
+  upcoming: Предстоящи събития
+  upcoming_short: Предстоящи
+  past: Минали събития
+  recent: Последни събития
+  next: Следващо събитие
+  view_all: Всички събития
+  none: Все още няма събития. Заповядайте отново скоро!
+  read_more: Прочети още
+  details: Подробности
+  details_title: Информация за събитието
+  directions: Упътване
+  join: Присъединете се
+  join_subject: "Участие в: "
+  past_notice: Това събитие вече се е състояло.
+  gallery: Галерия
+  sponsors_title: Спонсори на събитието
+  sponsors_text: Благодарим на компаниите, които подкрепят турнира.
+
+cta:
+  title: Искате да бъдете част от нас?
+  text: Станете доброволец, партньор или просто ни пишете.
+  button: Свържете се с нас
+
+contacts:
+  title: Контакти
+  reach: Свържете се с нас
+  email: Имейл
+  phone: Телефон
+  address_label: Адрес
+  address: България, гр.Пловдив, район Централен, ул. Гладстон №4
+  send_email: Изпратете имейл
+  volunteer_title: Доброволчество и партньорства
+  volunteer_text: Разкажете ни как искате да помогнете. Ще се свържем с вас възможно най-скоро.
+  find_us: Къде сме
+
+footer:
+  explore: Навигация
+  contact: Контакти
+  rights: Всички права запазени.
+
+map:
+  title: Карта
+
+history_page:
+  title: История
+  text: Как започна всичко и къде сме днес.
+  moments_heading: Ключови моменти           # visually hidden; keeps the heading levels from skipping from h1 to h3
+  # TODO: replace every placeholder below (years, texts, photos) with the real ones.
+  # `photo` is a path under assets/images/history/.
+  moments:
+    - year: "1900"
+      title: Началото
+      photo: /assets/images/history/photo-placeholder.svg
+      caption: Подпис към снимката – какво е показано и кога е направена.
+      text: Тук се разказва как е започнала историята на фондацията и какво е вдъхновило основаването ѝ.
+    - year: "2000"
+      title: Развитието
+      photo: /assets/images/history/photo-placeholder.svg
+      caption: Подпис към снимката – какво е показано и кога е направена.
+      text: Тук се разказва за първите проекти, събития и хората, които са помогнали по пътя.
+    - year: "2026"
+      title: Днес
+      photo: /assets/images/history/photo-placeholder.svg
+      caption: Подпис към снимката – какво е показано и кога е направена.
+      text: Тук се разказва с какво се занимава фондацията днес и какви са плановете ѝ за напред.
+
+partners_page:
+  title: Партньори
+  text: Благодарим на организациите и компаниите, които подкрепят нашата работа.
+  cta_title: Искате да станете наш партньор?
+  cta_text: Свържете се с нас и заедно ще направим повече добри и полезни дела.
+
+media_page:
+  title: В медиите
+  text: Публикации и материали за фондацията в медиите.
+  items_heading: Публикации                  # visually hidden; keeps the heading levels from skipping from h1 to h3
+  read: Към публикацията
+  none: Скоро тук ще има публикации.
+  # TODO: replace the placeholders with the real ones (`image` is a path under assets/images/media/).
+  # An entry with an empty `url` is hidden.
+  items:
+    - source: Име на медията
+      title: Заглавие на публикацията
+      subtitle: Кратко описание на публикацията.
+      image: /assets/images/media/photo-placeholder.svg
+      url: https://example.org
+    - source: Име на медията
+      title: Заглавие на публикацията
+      subtitle: Кратко описание на публикацията.
+      image: /assets/images/media/photo-placeholder.svg
+      url: https://example.org
+    - source: Име на медията
+      title: Заглавие на публикацията
+      subtitle: Кратко описание на публикацията.
+      image: /assets/images/media/photo-placeholder.svg
+      url: https://example.org
+
+months: [януари, февруари, март, април, май, юни, юли, август, септември, октомври, ноември, декември]
+months_short: [яну, фев, мар, апр, май, юни, юли, авг, сеп, окт, ное, дек]

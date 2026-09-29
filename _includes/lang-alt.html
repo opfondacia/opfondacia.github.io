@@ -1,0 +1,19 @@
+{%- comment -%}
+  Finds the translation of the current page (same `ref`, other language).
+  Sets `alt_lang`, `alt_url`, and `alt_found` (false when there is no translation,
+  in which case alt_url points at the other language's home page).
+  Requires i18n.html to have been included first.
+{%- endcomment -%}
+{%- assign alt_lang = "en" -%}
+{%- if lang == "en" -%}{%- assign alt_lang = "bg" -%}{%- endif -%}
+{%- assign alt_found = false -%}
+{%- assign alt_url = "/en/" -%}
+{%- if alt_lang == site.lang -%}{%- assign alt_url = "/" -%}{%- endif -%}
+{%- if page.ref -%}
+  {%- assign candidates = site.pages | concat: site.events | concat: site.events_en -%}
+  {%- assign alt_doc = candidates | where: "ref", page.ref | where: "lang", alt_lang | first -%}
+  {%- if alt_doc -%}
+    {%- assign alt_url = alt_doc.url -%}
+    {%- assign alt_found = true -%}
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,32 @@
+{%- include i18n.html -%}
+{% include page-header.html title=t.contacts.title %}
+
+<section class="container section">
+  <div class="row g-4">
+    <div class="col-12 col-lg-5">
+      <div class="contact-card">
+        <h2>{{ t.contacts.reach }}</h2>
+        <ul class="contact-list">
+          <li><i class="bi bi-envelope" aria-hidden="true"></i><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+          <li><i class="bi bi-telephone" aria-hidden="true"></i><span>{{ site.contact.phone }}</span></li>
+          <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>{{ t.contacts.address }}</span></li>
+        </ul>
+        <a href="mailto:{{ site.contact.email }}" class="btn btn-brand w-100">{{ t.contacts.send_email }}</a>
+      </div>
+
+      <div class="contact-card mt-4">
+        <h2>{{ t.contacts.volunteer_title }}</h2>
+        <p class="mb-0 text-muted">{{ t.contacts.volunteer_text }}</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-7">
+      {% if site.contact.map != "" and site.contact.map %}
+        <div class="contact-card">
+          <h2>{{ t.contacts.find_us }}</h2>
+          {% include map.html query=site.contact.map title=t.site.name %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

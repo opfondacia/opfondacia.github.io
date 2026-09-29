@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <rect width="1200" height="750" fill="#701012"/>
+  <rect x="0" y="0" width="150" height="150" fill="#f1e6d0"/><rect x="300" y="0" width="150" height="150" fill="#f1e6d0"/><rect x="600" y="0" width="150" height="150" fill="#f1e6d0"/><rect x="900" y="0" width="150" height="150" fill="#f1e6d0"/><rect x="150" y="150" width="150" height="150" fill="#f1e6d0"/><rect x="450" y="150" width="150" height="150" fill="#f1e6d0"/><rect x="750" y="150" width="150" height="150" fill="#f1e6d0"/><rect x="1050" y="150" width="150" height="150" fill="#f1e6d0"/><rect x="0" y="300" width="150" height="150" fill="#f1e6d0"/><rect x="300" y="300" width="150" height="150" fill="#f1e6d0"/><rect x="600" y="300" width="150" height="150" fill="#f1e6d0"/><rect x="900" y="300" width="150" height="150" fill="#f1e6d0"/><rect x="150" y="450" width="150" height="150" fill="#f1e6d0"/><rect x="450" y="450" width="150" height="150" fill="#f1e6d0"/><rect x="750" y="450" width="150" height="150" fill="#f1e6d0"/><rect x="1050" y="450" width="150" height="150" fill="#f1e6d0"/><rect x="0" y="600" width="150" height="150" fill="#f1e6d0"/><rect x="300" y="600" width="150" height="150" fill="#f1e6d0"/><rect x="600" y="600" width="150" height="150" fill="#f1e6d0"/><rect x="900" y="600" width="150" height="150" fill="#f1e6d0"/>
+  <rect width="1200" height="750" fill="#2a0506" fill-opacity=".1"/>
+  <g transform="translate(600 380)" fill="#f7efe0" stroke="#3a0708" stroke-width="10" stroke-linejoin="round">
+    <circle cx="0" cy="-190" r="62"/>
+    <ellipse cx="0" cy="-118" rx="84" ry="20"/>
+    <path d="M-52 -104 Q-30 -20 -96 150 L96 150 Q30 -20 52 -104 Z"/>
+    <rect x="-128" y="150" width="256" height="34" rx="12"/>
+  </g>
+</svg>

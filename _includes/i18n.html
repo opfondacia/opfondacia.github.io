@@ -1,0 +1,15 @@
+{%- comment -%}
+  Sets, for the caller:
+    lang    the current language code (page.lang, falling back to site.lang)
+    t       the translation dictionary for that language (_data/i18n/<lang>.yml)
+    prefix  URL prefix for that language: "" for the default language, "/en" for English
+  Include this at the top of every layout and page-body include, because a
+  layout's variables are not visible to the page content rendered before it.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == site.lang -%}
+  {%- assign prefix = "" -%}
+{%- else -%}
+  {%- assign prefix = "/" | append: lang -%}
+{%- endif -%}

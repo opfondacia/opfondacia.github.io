@@ -1,0 +1,14 @@
+# `key` picks the label from _data/i18n/<lang>.yml (nav.<key>); `url` is the path without the language prefix.
+- key: home
+  url: /
+# - key: history
+#   url: /history/
+# Events are hidden for now – uncomment to show (also see `show_events` in _config.yml)
+# - key: events
+#   url: /events/
+- key: partners
+  url: /partners/
+# - key: media
+#   url: /media/
+- key: contacts
+  url: /contacts/

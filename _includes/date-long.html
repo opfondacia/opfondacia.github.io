@@ -1,0 +1,3 @@
+{%- comment -%} Usage: {% include date-long.html date=page.date %} -> "15 октомври 2026" / "15 October 2026" {%- endcomment -%}
+{%- assign m = include.date | date: "%-m" | minus: 1 -%}
+{{- include.date | date: "%-d" }} {{ t.months[m] }} {{ include.date | date: "%Y" -}}

@@ -1,0 +1,31 @@
+{%- include i18n.html -%}
+{%- include events-split.html -%}
+{% include page-header.html title=t.events.title %}
+
+<section class="container section">
+  {% if upcoming_events.size == 0 and past_events.size == 0 %}
+    <p class="text-center text-muted">{{ t.events.none }}</p>
+  {% endif %}
+
+  {% if upcoming_events.size > 0 %}
+    <div class="section-head text-start">
+      <h2>{{ t.events.upcoming_short }}</h2>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for event in upcoming_events %}
+        {% include event-card.html event=event %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if past_events.size > 0 %}
+    <div class="section-head text-start mt-5">
+      <h2>{{ t.events.past }}</h2>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for event in past_events %}
+        {% include event-card.html event=event %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
