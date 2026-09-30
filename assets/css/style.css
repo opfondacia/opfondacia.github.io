@@ -373,13 +373,20 @@ a.sponsor { transition: transform .2s ease, box-shadow .2s ease; }
 .history-list { display: grid; gap: 3rem; }
 .history-item { display: grid; gap: 1.25rem; align-items: center; }
 .history-figure { margin: 0; }
-.history-figure img { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; }
+.history-figure img { display: block; margin-inline: auto; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; }
 .history-figure figcaption { margin-top: .6rem; font-size: .9rem; color: var(--muted); }
 .history-text h3 { font-size: 1.35rem; margin-bottom: .6rem; }
-.history-text p { margin-bottom: 0; }
+.history-text p { margin-bottom: 1rem; }
+.history-text p:last-child { margin-bottom: 0; }
 .history-year {
   display: inline-block; margin-bottom: .5rem; padding: .1rem .75rem; border-radius: 999px;
   background: var(--brand-soft); color: var(--brand); font-family: var(--font-head); font-weight: 700; font-size: .85rem;
+}
+
+/* Uniform photo sizes: landscape photos share one width, portrait photos share one height (aspect ratio kept). */
+.history-figure.is-landscape img { width: min(100%, 640px); }
+@media (min-width: 576px) {
+  .history-figure.is-portrait img { width: auto; max-width: 100%; height: 520px; }
 }
 
 @media (min-width: 768px) {

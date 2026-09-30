@@ -94,26 +94,52 @@ map:
 
 history_page:
   title: History
-  text: How it all began and where we are today.
+  text: "“Wealth earned by honest labour must serve people, and do good and useful deeds”"
   moments_heading: Key moments               # visually hidden; keeps the heading levels from skipping from h1 to h3
-  # TODO: replace every placeholder below (years, texts, photos) with the real ones.
-  # `photo` is a path under assets/images/history/.
+  # `photo` is a path under assets/images/history/; `alt` describes the image (no visible caption).
   moments:
-    - year: "1900"
-      title: The beginning
-      photo: /assets/images/history/photo-placeholder.svg
-      caption: Photo caption – what is shown and when it was taken.
-      text: This is where the story of how the foundation started, and what inspired it, is told.
-    - year: "2000"
-      title: Growing
-      photo: /assets/images/history/photo-placeholder.svg
-      caption: Photo caption – what is shown and when it was taken.
-      text: This is where the first projects, events and the people who helped along the way are described.
-    - year: "2026"
-      title: Today
-      photo: /assets/images/history/photo-placeholder.svg
-      caption: Photo caption – what is shown and when it was taken.
-      text: This is where what the foundation does today, and its plans for the future, are described.
+    - photo: /assets/images/history/home-2.webp
+      width: 448
+      height: 600
+      alt: "The House of Charity"
+      paragraphs:
+        - "The day is 8 November 1927 – St. Demetrius’ Day and the Day of the National Benefactor. Plovdiv had never shown such reverence for the work of a single man. Never had the people of Plovdiv risen so high in spirit and awareness in fulfilling their duty of gratitude. Dimitar Kudoglu had dreamed of this day for more than ten years – since the very moment the idea was born to create, with his own funds, a hospital where not only the refugees from the Aegean region, but all those driven out of Thrace and Macedonia, as well as the poor of Plovdiv, could be treated. He made this gift to the whole Bulgarian people, and every citizen could benefit from it, regardless of faith or nationality."
+        - "Together with the House, he also donated two tobacco warehouses on Ivan Vazov Street, worth 15 million leva. The rental income would support the dispensary. He himself was the tenant of these buildings, paying 800 thousand leva into the House’s budget every year. At his express wish, the consecration was meant to be very modest, but the people gave it such warmth and solemnity as Plovdiv had never witnessed before. The creation of the House of Charity is tied to a special law, prepared by the Bulgarian Prime Minister Andrey Lyapchev and adopted unanimously by the National Assembly, standing and with several minutes of acclamation, on 21 December 1926."
+    - photo: /assets/images/history/kudoglu-young.webp
+      width: 1086
+      height: 1614
+      alt: "Dimitar Kudoglu in his youth"
+      paragraphs:
+        - "The Benefactor, as Kudoglu was then called, donated a huge part of his fortune during his lifetime, saw with his own eyes the fruits of his pious work and enjoyed the gratitude and appreciation of his people. He himself declared that:"
+        - "“I have found meaning in life, joy and happiness only when I was able to do something good, to be useful to my people, to the poor, to the suffering”"
+        - "Born on 21 August 1862 to Petar and Stana Kudoglu, good Bulgarians and devout Christians, Dimitar Kudoglu carried in his soul from the earliest age a love for his neighbour and faith in God. These were the guiding principles in all the actions and undertakings of the Benefactor."
+    - photo: /assets/images/history/ephorate.webp
+      width: 1400
+      height: 1110
+      alt: "The ephorate that governed the House of Charity"
+      paragraphs:
+        - "The work of this modest and distinguished Bulgarian from the village of Gabrovo in the Xanthi region is today one of the most sublime expressions of our nation. It is not only an expression of effective care for the nation’s health, not only a raised temple of charity, but also an irrefutable document of the high moral and spiritual strength of the Bulgarian. It is the donation of the greatest vision and public benefit."
+        - "The House became the most important factor in the physical and spiritual revival of the people of Plovdiv. The work of the doctors at the House helped to address several major problems. First of all was the high child mortality. In Plovdiv and the other big cities, the high mortality among the population was also due to tuberculosis, then declared the most dangerous disease. At that time Bulgaria ranked first in Europe for child deaths from tuberculosis. The work of the department for combating venereal diseases, where patients were treated with the necessary discretion, was also very important."
+    - photo: /assets/images/history/kudoglu-portrait.webp
+      width: 659
+      height: 800
+      alt: "Portrait of Dimitar Kudoglu"
+      paragraphs:
+        - "Kudoglu’s good deed was meant to be an example for other wealthy people to follow. The House of Charity is an example of the highest human and public duty towards the suffering population. People stepped across the threshold of this house of human endeavour with a feeling of reverence and left with greater faith in people and in goodness."
+    - photo: /assets/images/history/kudoglu-and-maria.webp
+      width: 479
+      height: 734
+      alt: "Dimitar Kudoglu and Maria Bratanova – the last photograph of the benefactor"
+      paragraphs:
+        - "On a warm March day, Dimitar Kudoglu is on the balcony of his nephew’s house on Gladstone Street, talking with the nephew’s daughter Maria. He feels her to be his closest person. He had ensured her education at the most prestigious schools in Paris, and she grew up in his home in Dresden. She is also the only continuer of his family line. They talk about the consequences of the war that has begun and about the coming spring. Kudoglu gazes fondly from the balcony at the majestic figure of the House and says to Maria: “Mary, my soul fills up when I look at the House. This is my true child!”"
+        - "On 7 March 1940, Dimitar Kudoglu closed his eyes for the last time, with the contentment of a man who had immortalised his work with an indestructible monument created in his lifetime – not of cold granite or marble, but alive in hearts and souls, one that would continue to create good and would be needed by people. He had organised the activity of the foundation that supported the House in such a way that his death did not disrupt its normal work. Historians calculate that, over the whole time the House existed, his donation amounted to more than 41 million leva. A few months after his death, following his express will, his wife Ekaterina donated land to the Municipality of Plovdiv for a children’s day home to be built."
+    - photo: /assets/images/history/home.webp
+      width: 1400
+      height: 832
+      alt: "The House of Charity"
+      paragraphs:
+        - "In May 1951 the people of Plovdiv were shocked by the destruction of the bust-monument of Dimitar Kudoglu in the Tsar Simeon garden. Also in 1951, the “House of Charity and Public Health” foundation was closed by a decree of the presidium of the National Assembly. With it, a centuries-old tradition – going back to the Bulgarian tsars of the Middle Ages, who donated property to churches, monasteries and so on – was lightly swept away. In 1973 the idea was born in government circles to extend the Central Post Office. That would make it possible to build a new monumental monument of socialism and would further erase the memory of the Benefactor. For this purpose the building of the House of Charity and Public Health was demolished, and then the memory of it was erased as well. The bronze plaque with the bas-relief of the Benefactor and the inscription “Kudoglu Street” was taken down. That small but so significant street in the city centre for the people of Plovdiv is no more."
+        - "By unknown paths, D. Kudoglu’s own property south of the railway station, where the Anti-Rabies Station stood in 1929–1950, was sold by the Plovdiv Municipality, and a large supermarket now stands in its place. The site of the former children’s nursery was also sold; today a hotel and a restaurant with a whimsical name rise there."
 
 partners_page:
   title: Partners

@@ -19,14 +19,14 @@
   <div class="history-list">
     {% for moment in h.moments %}
       <article class="history-item">
-        <figure class="history-figure">
-          <img src="{{ moment.photo | relative_url }}" alt="{{ moment.caption | escape }}" width="1200" height="800" loading="lazy">
-          <figcaption>{{ moment.caption }}</figcaption>
+        <figure class="history-figure {% if moment.height > moment.width %}is-portrait{% else %}is-landscape{% endif %}">
+          <img src="{{ moment.photo | relative_url }}" alt="{{ moment.alt | escape }}" width="{{ moment.width | default: 1200 }}" height="{{ moment.height | default: 800 }}" loading="lazy">
+          {% if moment.caption %}<figcaption>{{ moment.caption }}</figcaption>{% endif %}
         </figure>
         <div class="history-text">
           {% if moment.year %}<span class="history-year">{{ moment.year }}</span>{% endif %}
-          <h3>{{ moment.title }}</h3>
-          <p>{{ moment.text }}</p>
+          {% if moment.title %}<h3>{{ moment.title }}</h3>{% endif %}
+          {% for paragraph in moment.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
         </div>
       </article>
     {% endfor %}
