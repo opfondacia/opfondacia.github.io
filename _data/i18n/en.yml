@@ -127,24 +127,44 @@ media_page:
   items_heading: Publications                # visually hidden; keeps the heading levels from skipping from h1 to h3
   read: Read the article
   none: Publications will appear here soon.
-  # TODO: replace the placeholders with the real ones (`image` is a path under assets/images/media/).
-  # An entry with an empty `url` is hidden.
   items:
-    - source: Publication name
-      title: Article title
-      subtitle: A short description of the publication.
-      image: /assets/images/media/photo-placeholder.svg
-      url: https://example.org
-    - source: Publication name
-      title: Article title
-      subtitle: A short description of the publication.
-      image: /assets/images/media/photo-placeholder.svg
-      url: https://example.org
-    - source: Publication name
-      title: Article title
-      subtitle: A short description of the publication.
-      image: /assets/images/media/photo-placeholder.svg
-      url: https://example.org
-
-months: [January, February, March, April, May, June, July, August, September, October, November, December]
-months_short: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    - source: Plovdiv24
+      title: An exhibition dedicated to Dimitar Kudoglu opens in Plovdiv
+      image: /assets/images/media/plovdiv24-exhibition.webp
+      url: https://www.plovdiv24.bg/novini/plovdiv/V-Plovdiv-otkriha-izlozhba-posvetena-na-Dimitur-Kudoglu-1299494?amp=true
+    - source: PB News
+      title: "Kudoglu's descendants: It is a duty and a pride to be part of such a man"
+      image: /assets/images/media/pbnovini-descendants.webp
+      url: https://www.pbnovini.com/gradat/2022/naslednitsi-na-kudoglu-dalg-i-gordost-e-che-sme-chast-ot-edin-takav-chovek-snimki-video-audio/
+    - source: Plovdiv24
+      title: The restored bust-monument of Dimitar Kudoglu unveiled
+      image: /assets/images/media/plovdiv24-bust.webp
+      url: https://www.plovdiv24.bg/novini/plovdiv/Otkriha-vuzstanoveniya-byust-pametnik-na-Dimitur-Kudoglu-1689330?amp=true
+    - source: YouTube
+      title: Video about Dimitar Kudoglu
+      image: /assets/images/media/youtube-RERSsB8Qr2g.webp
+      url: https://www.youtube.com/watch?v=RERSsB8Qr2g
+    - source: Plovdiv Municipality
+      title: Old Plovdiv – publication on plovdiv.bg
+      image: /assets/images/media/plovdiv-municipality.webp
+      url: https://www.plovdiv.bg/%D0%BE%D0%B8-%D1%81%D1%82%D0%B0%D1%80%D0%B8%D0%BD%D0%B5%D0%BD-%D0%BF%D0%BB%D0%BE%D0%B2%D0%B4%D0%B8%D0%B2-%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0-%D0%B7%D0%B0-%D0%BF%D1%8A%D1%80/
+    - source: Pod Tepeto
+      title: See the authentic doors from Kudoglu's House of Charity and Public Health
+      image: /assets/images/media/podtepeto-doors.webp
+      url: https://podtepeto.com/aktualno/vizhte-avtentichnite-vrati-ot-doma-na-blagotvoritelnostta-i-narodnoto-zdrave-na-kudoglu/
+    - source: YouTube
+      title: Video about Dimitar Kudoglu
+      image: /assets/images/media/youtube-DZZ71IZ7rAw.webp
+      url: https://www.youtube.com/watch?v=DZZ71IZ7rAw
+    - source: BNT
+      title: Dimitar Kudoglu – the benefactor who left a mark in times of war and epidemics
+      image: /assets/images/media/bnt-benefactor.webp
+      url: https://bnt.bg/news/dimitar-kudoglu-blagodetelyat-ostavil-sleda-vav-vremena-na-voina-i-epidemii-v329504-310768news.html
+    - source: Medical University – Plovdiv
+      title: Kudoglu's great-grandson meets the Rector
+      image: /assets/images/media/mu-plovdiv-rector.webp
+      url: https://mu-plovdiv.bg/pravnukat-na-kudoglu-se-sreshtna-s-rekto/
+    - source: Nova
+      title: "In memory of the benefactor Dimitar Kudoglu: a life for Bulgaria"
+      image: /assets/images/media/nova-memory.webp
+      url: https://nova.bg/news/view/2026/09/06/550363/%D1%81%D0%BF%D0%BE%D0%BC%D0%B5%D0%BD-%D0%B7%D0%B0-%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%B5%D0%BB%D1%8F-%D0%B4%D0%B8%D0%BC%D0%B8%D1%82%D1%8A%D1%80-%D0%BA%D1%83%D0%B4%D0%BE%D0%B3%D0%BB%D1%83-%D0%B6%D0%B8%D0%B2%D0%BE%D1%82-%D0%B7%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F/

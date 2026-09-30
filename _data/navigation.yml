@@ -8,7 +8,7 @@
 #   url: /events/
 - key: partners
   url: /partners/
-# - key: media
-#   url: /media/
+- key: media
+  url: /media/
 - key: contacts
   url: /contacts/
